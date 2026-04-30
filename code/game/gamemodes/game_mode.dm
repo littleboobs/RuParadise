@@ -464,6 +464,10 @@
 			continue
 		if(length(restricted_jobs) && (player.mind.assigned_role in restricted_jobs))
 			continue
+		if(length(protected_jobs) && (player.mind.assigned_role in protected_jobs))
+			continue
+		if(length(forbidden_antag_jobs) && (player.mind.assigned_role in forbidden_antag_jobs[role]))
+			continue
 		player_draft_log += "[player.key] had [role] enabled, so we are drafting them."
 		candidates += player.mind
 		if(length(prefered_species))
